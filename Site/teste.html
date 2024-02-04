@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Texto Animado</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .text-container {
+            overflow: hidden;
+            white-space: nowrap;
+            /* Impede que o texto quebre em várias linhas */
+        }
+        
+        .animated-text {
+            display: inline-block;
+            animation: moveText 10s linear infinite;
+            /* Ajuste a duração conforme necessário */
+        }
+        
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-container">
+        <div class="animated-text">@#@#@#@##@#@#@#@#@#@#@##@#@#@#@#@#@#@##@#@#@#@#@##@</div>
+    </div>
+</body>
+
+</html>

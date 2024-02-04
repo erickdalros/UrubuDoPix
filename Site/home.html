@@ -9,7 +9,7 @@
         body {
             align-items: center;
             text-align: center;
-            color: blue;
+            margin: 0;
         }
         
         #submitdados {
@@ -17,6 +17,27 @@
             width: 60px;
             padding: 20px;
             cursor: pointer;
+        }
+        
+        .rodapeanimado {
+            overflow: hidden;
+            white-space: nowrap;
+            /* Impede que o texto quebre em várias linhas */
+        }
+        
+        .rodapeanimado {
+            display: inline-block;
+            animation: moveText 60s linear infinite;
+            /* Ajuste a duração conforme necessário */
+        }
+        
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
     </style>
     <script>
@@ -40,6 +61,12 @@
 
 <body>
     <form>
+
+        <body>
+            <div class="rodapeanimado">
+                <div class="animado">Erick ganhou R$ 400; Alice ganhou R$ 600; Carlos ganhou R$ 800; Isabela ganhou R$ 1000; Maria ganhou R$ 1200; João ganhou R$ 1500;Ana perdeu R$ 300; Pedro perdeu R$ 500; Laura perdeu R$ 700; Rafael perdeu R$ 900; Sofia perdeu R$ 1100;</div>
+            </div>
+        </body>
         <div class="titulo">
             <h1>Seja bem vindo(a) ao Urubu do Pix</h1>
             <p>Crie sua conta e começe ganhando R$60,00</p>
