@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br  ">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrubuDoPix</title>
+    <style>
+        body {
+            align-items: center;
+            text-align: center;
+        }
+        
+        #submitdados {
+            height: 50px;
+            width: 60px;
+            padding: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Validação de user e senha completo (x)
+        // COnexão SQL ()
+        function enter() {
+            const user = document.getElementById('user').value;
+            const senha = document.getElementById('senha').value;
+
+            if (user === "admin" && senha === "admin") {
+                window.location.href = 'file:///home/erick/%C3%81rea%20de%20Trabalho/UrubuDoPix/Site/tabela.html';
+                alert('Funciona')
+            } else {
+                alert('User ou senha incorretos, favor tentar novamente');
+            }
+        }
+
+        // aqui daqui um tempo adicionar a lógica para envio ao sql
+    </script>
+</head>
+
+<body>
+    <form>
+        <div class="titulo">
+            <h1>Seja bem vindo(a) ao Urubu do Pix</h1>
+            <p>Crie sua conta e começe ganhando R$60,00</p>
+            <br>
+        </div>
+        <div class="dados">
+
+            <label for="user">Usuário:</label>
+            <input type="text" id="user">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha">
+
+            <button onclick="enter()">Entrar</button>
+            <br>
+            <br>
+            <p>Não tem conta conosco ainda? Crie um AGORA!!</p>
+            <button><a target="_blank" href="file:///home/erick/%C3%81rea%20de%20Trabalho/UrubuDoPix/Site/cadastro.html">Cadastrar-se</a></button>
+        </div>
+
+
+
+    </form>
+
+
+</body>
+
+</html>
