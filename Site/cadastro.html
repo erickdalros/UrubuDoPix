@@ -25,6 +25,16 @@
         function Cadastrar() {
             window.location.href = "file:///home/erick/%C3%81rea%20de%20Trabalho/UrubuDoPix/Site/tabela.html"
         }
+
+
+        function pdf() {
+            var link = document.createElement('a');
+            link.href = 'file:///home/erick/Downloads/Legisla%C3%A7%C3%A3o%20UrubuDoPix(1).pdf';
+            link.download = 'Legislação UrubuDoPix(1).pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </head>
 
@@ -59,9 +69,9 @@
                 <form name="form1">
 
 
-                    <p>
+                    <p> // Pesquisar como inserir o button para download do termo de uso de dados
                         <input type="checkbox" name="aceitar" id="aceitar" onClick="concordar()"> Eu li e aceito os termos de uso
-                        <a target="_blank" href="termos.html">termos de uso</a>.
+                        <a target="_blank" href="#" id="legislacao" onclick="pfd()">termos de uso</a>.
                     </p>
                     <input type="button" class="btn btn-terciary" name="envia" id="envia" value="Cadastrar" onclick="Cadastrar()" disabled></form>
 
