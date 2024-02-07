@@ -11,31 +11,6 @@
             text-align: center;
         }
     </style>
-    <script>
-        //Função de aceitar os termos
-        function concordar() {
-            if (document.getElementById('aceitar').checked == true) {
-                document.getElementById('envia').disabled = ""
-            }
-            if (document.getElementById('aceitar').checked == false) {
-                document.getElementById('envia').disabled = "disabled"
-            }
-        }
-        // se o user aceitar os termos vai para a página
-        function Cadastrar() {
-            window.location.href = "file:///home/erick/%C3%81rea%20de%20Trabalho/UrubuDoPix/Site/tabela.html"
-        }
-
-
-        function pdf() {
-            var link = document.createElement('a');
-            link.href = 'file:///home/erick/Downloads/Legisla%C3%A7%C3%A3o%20UrubuDoPix(1).pdf';
-            link.download = 'Legislação UrubuDoPix(1).pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
 </head>
 
 <body>
@@ -63,22 +38,46 @@
             <input type="number" id="cpf">
             <br>
             <br>
-
             <div class="modal-body">
-
                 <form name="form1">
-
-
-                    <p> // Pesquisar como inserir o button para download do termo de uso de dados
+                    <p>
                         <input type="checkbox" name="aceitar" id="aceitar" onClick="concordar()"> Eu li e aceito os termos de uso
-                        <a target="_blank" href="#" id="legislacao" onclick="pfd()">termos de uso</a>.
                     </p>
-                    <input type="button" class="btn btn-terciary" name="envia" id="envia" value="Cadastrar" onclick="Cadastrar()" disabled></form>
+                    <input type="button" class="btn btn-terciary" name="envia" id="envia" value="Cadastrar" onclick="Cadastrar()" disabled>
+                </form>
 
+                <button id="downloadButton">Termos de Uso</button>
             </div>
         </div>
-
     </form>
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            // Cria um elemento a e define seus atributos
+            var link = document.createElement('a');
+            link.href = 'file:///home/erick/Downloads/Legisla%C3%A7%C3%A3o.pdf'; // Caminho relativo ao arquivo PDF (assumindo que esteja na mesma pasta que o HTML)
+            link.download = 'Legislacao.pdf'; // Nome do arquivo PDF
+
+            // Adiciona o elemento ao documento
+            document.body.appendChild(link);
+
+            // Simula o clique no link para iniciar o download
+            link.click();
+
+            // Remove o elemento do documento
+            document.body.removeChild(link);
+        });
+
+        //Função de aceitar os termos
+        function concordar() {
+            document.getElementById('envia').disabled = !document.getElementById('aceitar').checked;
+        }
+
+        // se o usuário aceitar os termos vai para a página
+        function Cadastrar() {
+            window.location.href = "tabela.html";
+        }
+    </script>
 </body>
 
 </html>

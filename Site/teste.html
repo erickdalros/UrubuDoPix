@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Código QR</title>
+    <!-- Inclua a biblioteca qrcode.js -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/qrcode.min.js"></script>
+</head>
+
+<body>
+    <h1>Gerador de Código QR</h1>
+
+    <!-- Placeholder onde o código QR será exibido -->
+    <div id="qrcode"></div>
+
+    <script>
+        // URL que você deseja codificar em QR
+        var link = "https://youtube.com";
+
+        // Cria um novo objeto QRCode
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: link, // O texto/link a ser codificado
+            width: 256, // Largura do código QR
+            height: 256, // Altura do código QR
+            colorDark: "#000000", // Cor dos quadrados escuros
+            colorLight: "#ffffff", // Cor dos quadrados claros
+            correctLevel: QRCode.CorrectLevel.H // Nível de correção de erros
+        });
+    </script>
+</body>
+
+</html> // atualizado 07/02/2024 16:47
